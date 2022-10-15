@@ -42,17 +42,22 @@ const List = () => {
         }
     ]);
     const addColumn =  newColumn => {
-        setColumns([...columns, {id: shortid(), title: newColumn.title, cards: [] }]);
+        setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
         
     }  
     const addCard = (newCard, columnId) => {
-        const columnsUpadated = columns.map( column => { 
+        console.log('click');
+      
+        const columnsUpdated = columns.map(column => { 
+            console.log(column.id);
+            console.log(columnId);
+            
             if(column.id === columnId) 
                 return { ...column, cards: [...column.cards, { id: shortid(), title: newCard.title}]}
             else 
                 return column
         })
-        setColumns(columnsUpadated)
+        setColumns(columnsUpdated)
     };       
     return (
         <div className={styles.list}>
@@ -64,10 +69,11 @@ const List = () => {
                {columns.map(column => 
                <Column 
                     key={column.id} 
+                    id={column.id}
                     title={column.title} 
                     icon={column.icon} 
                     cards={column.cards} 
-                    action={addCard} 
+                    addCard={addCard} 
                 />)} 
             </section>
             <ColumnForm  action={addColumn}/>
