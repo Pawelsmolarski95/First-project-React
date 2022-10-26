@@ -2,14 +2,20 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import styles from './CardForm.module.scss';
+import { useDispatch } from 'react-redux';
+import shortid from 'shortid';
 
 const CardForm = props => {
+    const dispatch = useDispatch();
     const [title, setTitle] = useState('');
+    
+   
     
     const handleSubmit = e => {
         e.preventDefault();
-        props.addCard({ title: title}, props.columnId);
+        dispatch({ type: 'ADD_CARD', newCard: { id:shortid(), columnId:props.columnId , title} });
         setTitle('');
+        
     };
     return (
         <form onSubmit={handleSubmit} className={styles.cardForm}>
