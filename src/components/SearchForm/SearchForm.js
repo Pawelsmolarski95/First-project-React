@@ -3,6 +3,8 @@ import TextInput from '../TextInput/TextInput'
 import Button from '../Button/Button'
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { updateSearchString } from '../../redux/store';
+
 
 const SearchForm = (props) => {
     const [searchValue, setSearchValue] = useState('');
@@ -11,7 +13,7 @@ const SearchForm = (props) => {
     
     const filterCards = e => {
         e.preventDefault();
-        dispatch({ type: 'UPDATE_SEARCHSTRING', searchValue: searchValue})
+        dispatch( updateSearchString(searchValue))
         
     }
     
