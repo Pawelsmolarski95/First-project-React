@@ -1,0 +1,44 @@
+@import 'font-awesome/css/font-awesome.min.css';
+@import '../../styles/settings.scss';
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px;
+}
+
+.ul {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.li {
+    margin-right: 15px;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.logo  i {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: white;
+    font-size: 20px;
+}
