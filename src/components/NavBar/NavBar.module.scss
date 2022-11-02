@@ -27,6 +27,11 @@
     font-weight: bold;
     letter-spacing: 2px;
 }
+.isActive {
+    @extend .link ;
+        color: $color-warning;
+    }
+
 
 .logo {
     display: block;

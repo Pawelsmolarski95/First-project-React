@@ -3,19 +3,29 @@ import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
 import { useSelector } from 'react-redux';
-import { getAllColumns } from '../../redux/store';
+import { getAllColumns, getListById} from '../../redux/store';
+import { useParams } from 'react-router';
 
 
-
-const List = () => {
+const List = () => { 
     
-    const columns = useSelector(getAllColumns);
+    const { listId } = useParams()
+    
+    const columns =  useSelector (columns => getAllColumns(columns, listId));
+    
+    const listData = useSelector(lists => getListById(lists, listId ));
+    
+    
+    
+   
+    
     return (
         <div className={styles.list}>
             <header className={styles.header}>
-                <h2 className={styles.title}>Things to do <span>soon</span></h2>
+                <h2 className={styles.title}>
+                    {listData.title} <span>soon</span></h2>
             </header>
-            <p className={styles.description}>Interesting things I want to check out</p>
+            <p className={styles.description}>{listData.description}</p>
             <section className={styles.columns}>
                {columns.map(column => 
                <Column 
