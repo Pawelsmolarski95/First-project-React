@@ -1,4 +1,6 @@
-@import '../../styles/settings.scss';
+@import '../../styles/settings.scss' ;
+@import 'font-awesome/css/font-awesome.min.css';
+
 
 .card {
     position: relative;
@@ -10,4 +12,10 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    cursor: pointer;
+}
+
+
+.isFavourite {
+    color: $color-warning;
 }
