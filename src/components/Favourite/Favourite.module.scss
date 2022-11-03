@@ -1,0 +1,16 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+.column {
+    flex-shrink: 0;
+    width: calc(50% - 12px);
+    background: $color-dark;
+    margin: 0 $base-size $base-size 0;
+    padding: ($base-size * 1.2);
+    border-radius: $radius;
+    color: $color-dark;
+  
+    &:last-child {
+      margin: 50px auto;
+    }
+  }
