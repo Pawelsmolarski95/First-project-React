@@ -7,12 +7,14 @@ import shortid from 'shortid';
 
 
 const ColumnForm = (props) => {
+    
+    const listId = props.listId
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('')
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch( addColumn({id:shortid(), title, icon }));
+        dispatch( addColumn({id:shortid(), title, icon, listId }));
         setTitle('');
         setIcon('')
     }

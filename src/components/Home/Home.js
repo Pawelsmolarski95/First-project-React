@@ -1,15 +1,16 @@
 
 import Hero from "../Hero/Hero"
+import ListForm from "../ListForm/ListForm"
 import Lists from "../Lists/Lists"
-import SearchForm from "../SearchForm/SearchForm"
+
 
 
 const Home = () => {
     return(
         <main>
             <Hero/>
-            <SearchForm/>
             <Lists/>
+            <ListForm/>
         </main>
     )
 }

@@ -5,6 +5,8 @@ import ColumnForm from '../ColumnForm/ColumnForm';
 import { useSelector } from 'react-redux';
 import { getAllColumns, getListById} from '../../redux/store';
 import { useParams } from 'react-router';
+import SearchForm from "../SearchForm/SearchForm"
+import { Navigate} from 'react-router';
 
 
 const List = () => { 
@@ -18,7 +20,7 @@ const List = () => {
     
     
    
-    
+    if(!listData) return <Navigate to="/"/>
     return (
         <div className={styles.list}>
             <header className={styles.header}>
@@ -33,7 +35,9 @@ const List = () => {
                     {...column}
                 />)} 
             </section>
-            <ColumnForm  />
+            <SearchForm/>
+            <ColumnForm listId={listId} />
+          
             
         </div>
     );
