@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
-import { addList } from '../../redux/store';
+import { addList }  from '../../redux/listsRedux';
 import styles from './ListForm.module.scss';
 import Button from '../Button/Button';
 
